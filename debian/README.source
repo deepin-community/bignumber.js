@@ -1,0 +1,16 @@
+Obtaining upstream tarballs
+---------------------------
+
+Some node-*/*.js projects ship the code of other node-*/*.js projects
+in their upstream sources. So does bignumber.js.
+
+Upstream has copied some version of bigdecimal.js into the upstream
+source tree of bignumber.js. This bigdecimal.js version does not get
+shipped in the bignumber.js src:package in Debian.
+
+In order to avoid this we have created a custom get-orig-source stanza
+in /debian/rules that removes the completely perf folder (performance tests
+of bignumber.js compared to bigdecimal.js) from this src:package.
+
+light+love
+Mike Gabriel (aka sunweaver)

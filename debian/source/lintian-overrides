@@ -1,0 +1,7 @@
+# False positive: data
+source-is-missing [*perf/*]
+source-is-missing [*test/*]
+source-contains-prebuilt-javascript-object [*perf/*]
+source-contains-prebuilt-javascript-object [*test/*]
+very-long-line-length-in-source-file *perf/*
+very-long-line-length-in-source-file *test/*
