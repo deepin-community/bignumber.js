@@ -1,4 +1,18 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	uglifyjs bignumber.js > bignumber.min.js
+	dh_auto_build
+
+override_dh_installdocs:
+	dh_installdocs
+	rm -f debian/node-bignumber/usr/share/doc/node-bignumber/perf/lib/bigdecimal_GWT/LICENCE*
+	rm -f debian/node-bignumber/usr/share/doc/node-bignumber/perf/lib/bigdecimal_ICU4J/LICENCE*
+	rm -f debian/node-bignumber/usr/share/doc/node-bignumber/test/v8-LICENCE*

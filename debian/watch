@@ -1,0 +1,6 @@
+version=4
+opts=dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/bignumber.js-$1.tar.gz/,\
+repack,repacksuffix=+ds \
+ https://github.com/MikeMcl/bignumber.js/tags .*/archive/.*/v?([\d\.]+).tar.gz
+
